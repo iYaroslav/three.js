@@ -1,6 +1,6 @@
 {
   "name": "three",
-  "version": "0.115.1",
+  "version": "0.115.2",
   "description": "JavaScript 3D library",
   "main": "build/three.js",
   "module": "build/three.module.js",
@@ -58,7 +58,7 @@
     "test-unit": "npm run build-test && qunit -r failonlyreporter test/unit/three.source.unit.js",
     "test-e2e": "node --expose-gc test/e2e/puppeteer.js",
     "make-screenshot": "cross-env MAKE=true npm run test-e2e",
-    "prepublishOnly": "rimraf build && yarn build",
+    "prepublishOnly": "npm run build",
     "deploy": "sh deploy.sh"
   },
   "keywords": [
