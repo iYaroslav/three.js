@@ -1,6 +1,6 @@
 {
   "name": "three",
-  "version": "0.115.0-mrt",
+  "version": "0.115.0",
   "description": "JavaScript 3D library",
   "main": "build/three.js",
   "module": "build/three.module.js",
@@ -9,13 +9,13 @@
     "type": "git",
     "url": "https://github.com/mrdoob/three.js"
   },
+  "publishConfig": {
+    "registry": "https://npm.leerybit.uz/"
+  },
   "files": [
     "build/three.js",
     "build/three.min.js",
     "build/three.module.js",
-    "examples/js",
-    "examples/jsm",
-    "examples/fonts",
     "LICENSE",
     "package.json",
     "README.md",
@@ -57,7 +57,9 @@
     "test-lint-examples": "eslint examples/jsm --ext js --ext ts --ignore-pattern libs && tsc -p utils/build/tsconfig-examples.lint.json",
     "test-unit": "npm run build-test && qunit -r failonlyreporter test/unit/three.source.unit.js",
     "test-e2e": "node --expose-gc test/e2e/puppeteer.js",
-    "make-screenshot": "cross-env MAKE=true npm run test-e2e"
+    "make-screenshot": "cross-env MAKE=true npm run test-e2e",
+    "prepublishOnly": "rimraf build && yarn build",
+    "deploy": "sh deploy.sh"
   },
   "keywords": [
     "three",
