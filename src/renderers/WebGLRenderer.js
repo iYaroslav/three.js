@@ -258,8 +258,6 @@ function WebGLRenderer( parameters ) {
 
 		capabilities = new WebGLCapabilities( _gl, extensions, parameters );
 
-		console.log( capabilities );
-
 		if ( capabilities.isWebGL2 === false ) {
 
 			extensions.get( 'WEBGL_depth_texture' );
